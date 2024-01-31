@@ -1,0 +1,24 @@
+name: frontend-github-actions-run
+run-name: ${{ github.actor }} is running backend github actions
+on: [push]
+jobs:
+    install_test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
+            - uses: actions/cache@v3
+              with:
+                  path: '**/node_modules'
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+            - name: run-install
+              run: npm install
+
+            - name: run-lint
+              run: npm run lint
+
+            - name: run-test
+              run: npm run test

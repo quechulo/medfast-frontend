@@ -1,0 +1,73 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "airbnb"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts", ".js", ".jsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-uses-react": ["off"],
+    "react/jsx-props-no-spreading": ["warn"],
+    "react/no-unescaped-entities": ["off"],
+    "react/prop-types": ["off"],
+    "import/extensions": ["off"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/jsx-filename-extension": ["off"],
+    "no-tabs": ["off"],
+    "indent": ["off"],
+    "no-param-reassign": ["off"],
+    "no-trailing-spaces": ["warn"],
+    "no-multiple-empty-lines": ["warn"],
+    "react/function-component-definition": ["off"],
+    "testing-library/prefer-screen-queries": ["warn"],
+    "import/prefer-default-export": ["warn"],
+    "linebreak-style": ["off"],
+    "react/jsx-indent": ["warn"],
+    "comma-dangle": ["off"],
+    "arrow-body-style": ["warn"],
+    "react/jsx-indent-props": ["warn"],
+    "object-curly-newline": ["off"],
+    "operator-linebreak": ["off"],
+    "no-shadow": ["off"],
+    "react/require-default-props": ["off"],
+    "no-confusing-arrow": ["off"],
+    "implicit-arrow-linebreak": ["off"],
+    "react/jsx-boolean-value": ["warn"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "function-paren-newline": ["off"]
+  }
+}
